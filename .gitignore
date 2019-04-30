@@ -1,6 +1,6 @@
 
-# Created by https://www.gitignore.io/api/macos,linux,windows,git,xcode
-# Edit at https://www.gitignore.io/?templates=macos,linux,windows,git,xcode
+# Created by https://www.gitignore.io/api/macos,linux,windows,git,xcode,visualstudiocode
+# Edit at https://www.gitignore.io/?templates=macos,linux,windows,git,xcode,visualstudiocode
 
 ### Git ###
 # Created by git for backups. To disable backups in Git:
@@ -60,6 +60,17 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+
 ### Windows ###
 # Windows thumbnail cache files
 Thumbs.db
@@ -118,4 +129,4 @@ DerivedData/
 /*.gcno
 **/xcshareddata/WorkspaceSettings.xcsettings
 
-# End of https://www.gitignore.io/api/macos,linux,windows,git,xcode
+# End of https://www.gitignore.io/api/macos,linux,windows,git,xcode,visualstudiocode
