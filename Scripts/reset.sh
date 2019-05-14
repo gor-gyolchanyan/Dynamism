@@ -95,7 +95,7 @@ cat gitignore-prefix >> .gitignore
 curl -s "https://www.gitignore.io/api/$(cat 'gitignore-keywords' | paste -sd ',' -)" >> .gitignore
 cat gitignore-suffix >> .gitignore
 
-# Creates the `main.swift` file of the playground target.
+# Create the `main.swift` file of the playground target.
 create_main_swift_file "${playground_target_path}"
 
 # Generate the Xcode project that is referenced from the Xcode workspace.
