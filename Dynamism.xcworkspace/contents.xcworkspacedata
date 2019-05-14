@@ -4,4 +4,22 @@
    <FileRef
       location = "group:Dynamism.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:README.md">
+   </FileRef>
+   <FileRef
+      location = "group:LICENCE.txt">
+   </FileRef>
+   <FileRef
+      location = "group:gitignore-keywords">
+   </FileRef>
+   <FileRef
+      location = "group:gitignore-prefix">
+   </FileRef>
+   <FileRef
+      location = "group:gitignore-suffix">
+   </FileRef>
+   <FileRef
+      location = "group:Dynamism.xcworkspace/xcshareddata/IDETemplateMacros.plist">
+   </FileRef>
 </Workspace>
