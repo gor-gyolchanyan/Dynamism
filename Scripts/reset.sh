@@ -103,5 +103,6 @@ swift package generate-xcodeproj --skip-extra-files --enable-code-coverage > /de
 
 # Open the Xcode workspace.
 osascript <<EOF
-tell application "Finder" to open (POSIX file "${repository_path}/${xcode_workspace_path}/")
+set workspacePath to (POSIX file "${repository_path}/${xcode_workspace_path}/")
+tell application "Finder" to open workspacePath
 EOF
