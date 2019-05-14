@@ -70,6 +70,9 @@ cat gitignore-prefix >> .gitignore
 curl -s "https://www.gitignore.io/api/$(cat 'gitignore-keywords' | paste -sd ',' -)" >> .gitignore
 cat gitignore-suffix >> .gitignore
 
+# Generate the Xcode project that is referenced from the Xcode workspace.
+swift package generate-xcodeproj --skip-extra-files --enable-code-coverage > /dev/null
+
 # Open the Xcode workspace.
 osascript <<EOF
 tell application "Finder" to open (POSIX file "${repository_path}/${xcode_workspace_path}/")

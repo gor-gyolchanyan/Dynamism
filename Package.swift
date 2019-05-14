@@ -3,5 +3,18 @@
 import PackageDescription
 
 let package = Package(
-    name: "Dynamism"
+	name: "Dynamism",
+	products: [
+		.library(
+			name: "Dynamism",
+			targets: [
+				"Dynamism"
+			]
+		)
+	],
+	targets: [
+		.target(
+			name: "Dynamism"
+		)
+	]
 )
