@@ -1,6 +1,6 @@
 
-# Created by https://www.gitignore.io/api/macos,linux,windows,git,xcode,visualstudiocode
-# Edit at https://www.gitignore.io/?templates=macos,linux,windows,git,xcode,visualstudiocode
+# Created by https://www.gitignore.io/api/macos,linux,windows,git,xcode,visualstudiocode,swiftpm
+# Edit at https://www.gitignore.io/?templates=macos,linux,windows,git,xcode,visualstudiocode,swiftpm
 
 ### Git ###
 # Created by git for backups. To disable backups in Git:
@@ -60,6 +60,13 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+### SwiftPM ###
+Packages
+.build/
+xcuserdata
+DerivedData/
+*.xcodeproj
+
 ### VisualStudioCode ###
 .vscode/*
 !.vscode/settings.json
@@ -110,7 +117,6 @@ xcuserdata/
 
 ## compatibility with Xcode 3 and earlier (ignoring not required starting Xcode 4)
 build/
-DerivedData/
 *.moved-aside
 *.pbxuser
 !default.pbxuser
@@ -129,4 +135,4 @@ DerivedData/
 /*.gcno
 **/xcshareddata/WorkspaceSettings.xcsettings
 
-# End of https://www.gitignore.io/api/macos,linux,windows,git,xcode,visualstudiocode
+# End of https://www.gitignore.io/api/macos,linux,windows,git,xcode,visualstudiocode,swiftpm
