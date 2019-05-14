@@ -33,6 +33,12 @@ repository_name="$(basename "${repository_path}")"
 # The path to the Xcode workspace.
 xcode_workspace_path="${repository_name}.xcworkspace"
 
+# The name of the playground target.
+playground_target_name="${repository_name}Playground"
+
+# The path of the playground target.
+playground_target_path="Sources/${playground_target_name}"
+
 # --------------------------------------------------------------------------------
 
 # Joins all parameters after the first one using the character specified by the first parameter.
@@ -40,6 +46,25 @@ join_by() {
 	local IFS="$1"
 	shift
 	echo "$*"
+}
+
+# Creates an empty swift file with the specified path.
+create_swift_file() {
+	local path="${1}"
+	rm -f "${path}"
+	mkdir -p "$(dirname ${path})"
+	echo '// ' >> "${path}"
+	cat 'LICENCE.txt' | xargs -L "\n" -L1 echo "// " > "${path}"
+	echo '// ' >> "${path}"
+	echo '' >> "${path}"
+}
+
+# Creates a `main.swift` file at the specified directory.
+create_main_swift_file() {
+	local path="${1}"
+	create_swift_file "${path}/main.swift"
+	echo 'import Dynamism' >> "${path}/main.swift"
+	echo '' >> "${path}/main.swift"
 }
 
 # --------------------------------------------------------------------------------
@@ -69,6 +94,9 @@ echo '' >> .gitignore
 cat gitignore-prefix >> .gitignore
 curl -s "https://www.gitignore.io/api/$(cat 'gitignore-keywords' | paste -sd ',' -)" >> .gitignore
 cat gitignore-suffix >> .gitignore
+
+# Creates the `main.swift` file of the playground target.
+create_main_swift_file "${playground_target_path}"
 
 # Generate the Xcode project that is referenced from the Xcode workspace.
 swift package generate-xcodeproj --skip-extra-files --enable-code-coverage > /dev/null

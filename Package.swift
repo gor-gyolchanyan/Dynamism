@@ -15,6 +15,12 @@ let package = Package(
 	targets: [
 		.target(
 			name: "Dynamism"
+		),
+		.target(
+			name: "DynamismPlayground",
+			dependencies: [
+				"Dynamism"
+			]
 		)
 	]
 )
