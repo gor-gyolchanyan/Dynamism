@@ -1,7 +1,7 @@
 #!/bin/sh
 
 #
-# Brings the working copy of the repository to a clean and usable state.
+# Brings the working copy of the repository to a clean and usable state without discarding uncommited changes.
 #
 
 # --------------------------------------------------------------------------------
