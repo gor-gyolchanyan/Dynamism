@@ -11,6 +11,10 @@
       location = "group:LICENCE.txt">
    </FileRef>
    <FileRef
+      location = "group:Dynamism.podspec"
+      assignedFileDataType = "public.ruby-script">
+   </FileRef>
+   <FileRef
       location = "group:gitignore-keywords">
    </FileRef>
    <FileRef
