@@ -41,22 +41,31 @@ public extension DynamicType {
 	var isAnalyzed: Bool {
 		@inlinable
 		get {
-			return self.analysis != nil
+			@available(swift, obsoleted: 5.1)
+			let `Self` = type(of: self)
+
+			return Self.Analysis.analysisByDynamicType.keys.contains(self)
 		}
 	}
 }
 
 internal extension DynamicType {
 
+	/// The information acquired by analyzing `self.native` was analyzed through its static type.
 	///
+	/// - precondition: `self.isAnalyzed == true`
 	@usableFromInline
-	var analysis: Analysis? {
+	var analysis: Analysis {
 		@inlinable
 		get {
 			@available(swift, obsoleted: 5.1)
 			let `Self` = type(of: self)
 
-			return Self.Analysis.analysisByDynamicType[self]
+			guard let analysis = Self.Analysis.analysisByDynamicType[self] else {
+				preconditionFailure("Attempted to access non-trivial features of a non-analyzed dynamic types.")
+			}
+
+			return analysis
 		}
 	}
 }

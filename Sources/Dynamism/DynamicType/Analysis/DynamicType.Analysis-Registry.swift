@@ -49,5 +49,4 @@ internal extension DynamicType.Analysis {
 		self.analysisByDynamicType[analysis.subjectType] = analysis
 		self.dynamicTypeByLongName[analysis.subjectType.longName] = analysis.subjectType
 	}
-
 }
